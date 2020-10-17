@@ -6,7 +6,7 @@ const arrayUtil = require('../core/util/ArrayUtil');
  * todo
  */
 class RandomWeightUtil {
-    weightArr = []
+    #weightArr = []
 
     /**
      * 添加权重对象
@@ -16,7 +16,7 @@ class RandomWeightUtil {
      */
     add(obj, weight) {
         for (let i = 0; i < weight; i++) {
-            this.weightArr.push(obj);
+            this.#weightArr.push(obj);
         }
         return this;
     };
@@ -26,7 +26,7 @@ class RandomWeightUtil {
      *
      */
     clear() {
-        return this.weightArr.splice(0, this.weightArr.length);
+        return this.#weightArr.splice(0, this.#weightArr.length);
     };
 
     /**
@@ -35,10 +35,10 @@ class RandomWeightUtil {
      * @return {Object}
      */
     next = function () {
-        if (arrayUtil.isEmpty(this.weightArr)) {
+        if (arrayUtil.isEmpty(this.#weightArr)) {
             return null;
         }
-        return this.weightArr[Math.floor(Math.random() * this.weightArr.length)];
+        return this.#weightArr[Math.floor(Math.random() * this.#weightArr.length)];
     };
 }
 
