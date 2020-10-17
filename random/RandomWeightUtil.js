@@ -1,49 +1,48 @@
+
+const arrayUtil = require('../core/util/ArrayUtil');
 /**
- * @author: 易成贤
- * @description: js 实现的简单随机权重工具类
- * @type {RandomWeightUtil}
- */
-/**
- * @author:
+ * @author ycx
  * @description : 简单实现的随机权重工具类
+ * todo
  */
-RandomWeightUtil = function () {
+class RandomWeightUtil {
+    weightArr = []
 
-    let weightArr  = [];
-
-    function RandomWeightUtil() {
-
-    }
     /**
      * 添加权重对象
      * @param obj 对象
      * @param weight 权重值 需要配置 整数
+     * @return {RandomWeightUtil}
      */
-    this.add = function (obj, weight) {
+    add(obj, weight) {
         for (let i = 0; i < weight; i++) {
-            weightArr.push(obj);
+            this.weightArr.push(obj);
         }
         return this;
     };
+
     /**
      * @description: 清空权重对象
      *
      */
-    this.clear = function () {
-        weightArr = [];
-    };
-    /**
-     * 获取下一个随机权重对象
-     */
-    this.next = function () {
-        if (0 === weightArr.length) {
-            return null;
-        }
-        return weightArr[Math.floor(Math.random() * weightArr.length)];
+    clear() {
+        return this.weightArr.splice(0, this.weightArr.length);
     };
 
-    return this;
+    /**
+     * @author ycx
+     * 获取下一个随机权重对象
+     * @return {Object}
+     */
+    next = function () {
+        if (arrayUtil.isEmpty(this.weightArr)) {
+            return null;
+        }
+        return this.weightArr[Math.floor(Math.random() * this.weightArr.length)];
+    };
 }
+
+module.exports = RandomWeightUtil
 
 
 

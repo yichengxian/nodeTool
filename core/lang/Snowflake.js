@@ -4,15 +4,15 @@
  * @link: <a>https://www.cnblogs.com/grasp/p/12309726.html</a>
  * @type {Snowflake}
  */
-Snowflake = /** @class */ (function() {
+class Snowflake {
     /**
      *
-     * @param _workerId 工作站id
-     * @param _dataCenterId 数据中心
-     * @param _sequence
+     * @param workerId 工作站id
+     * @param dataCenterId 数据中心
+     * @param sequence
      * @constructor
      */
-   function Snowflake(_workerId, _dataCenterId, _sequence) {
+    constructor(workerId, dataCenterId, sequence) {
         this.twepoch = 1288834974657n;
         //this.twepoch = 0n;
         this.workerIdBits = 5n;
@@ -36,22 +36,25 @@ Snowflake = /** @class */ (function() {
             throw new Error('_dataCenterId must max than 0 and small than maxDataCenterId-[' + this.maxDataCenterId + ']');
         }
 
-        this.workerId = BigInt(_workerId);
-        this.dataCenterId = BigInt(_dataCenterId);
-        this.sequence = BigInt(_sequence);
+        this.workerId = BigInt(workerId);
+        this.dataCenterId = BigInt(dataCenterId);
+        this.sequence = BigInt(sequence);
     }
-    Snowflake.prototype.tilNextMillis = function(lastTimestamp) {
-        var timestamp = this.timeGen();
+
+    tilNextMillis(lastTimestamp) {
+        let timestamp = this.timeGen();
         while (timestamp <= lastTimestamp) {
             timestamp = this.timeGen();
         }
         return BigInt(timestamp);
     };
-    Snowflake.prototype.timeGen = function() {
+
+    timeGen(){
         return BigInt(Date.now());
     };
-    Snowflake.prototype.nextId = function() {
-        var timestamp = this.timeGen();
+
+    nextId() {
+        let timestamp = this.timeGen();
         if (timestamp < this.lastTimestamp) {
             throw new Error('Clock moved backwards. Refusing to generate id for ' +
                 (this.lastTimestamp - timestamp));
@@ -70,8 +73,10 @@ Snowflake = /** @class */ (function() {
             (this.workerId << this.workerIdShift) |
             this.sequence;
     };
-    return Snowflake;
-}());
+
+}
+
+module.exports = Snowflake
 
 
 
