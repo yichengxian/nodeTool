@@ -56,8 +56,7 @@ class Snowflake {
     nextId() {
         let timestamp = this.timeGen();
         if (timestamp < this.lastTimestamp) {
-            throw new Error('Clock moved backwards. Refusing to generate id for ' +
-                (this.lastTimestamp - timestamp));
+            throw new Error('Clock moved backwards. Refusing to generate id for ' + (this.lastTimestamp - timestamp));
         }
         if (this.lastTimestamp === timestamp) {
             this.sequence = (this.sequence + 1n) & this.sequenceMask;
