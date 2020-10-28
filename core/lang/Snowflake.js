@@ -1,6 +1,6 @@
 /**
  * @author: 易成贤
- * @description:推特雪花算法 的js 实现 用于生成不重复的id
+ * @description: 推特雪花算法 的js 实现 用于生成不重复的id
  * @link: <a>https://www.cnblogs.com/grasp/p/12309726.html</a>
  * @type {Snowflake}
  */
