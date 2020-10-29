@@ -1,3 +1,4 @@
+
 const arrayUtil = require('./ArrayUtil');
 
 /**
@@ -7,6 +8,12 @@ const arrayUtil = require('./ArrayUtil');
 class StringUtil {
 
     /**
+     * 空字符串
+     * @type {string}
+     */
+    static Empty = '';
+
+    /**
      * @author ycx
      *  判断字符串是否为空白 空白的定义如下：<br/>
      *  1,字符串不存在
@@ -14,7 +21,7 @@ class StringUtil {
      *  3.全是' '
      *  <br/>
      *
-     * @param str 被检测的字符
+     * @param str {string} 被检测的字符
      * @return {boolean} 是否是空白
      */
     static isBlank(str) {
@@ -36,7 +43,7 @@ class StringUtil {
      * @author ycx
      *  判断字符串是否不为空白
      *  参考 isBank
-     * @param str 被检测字符串
+     * @param str {string} 被检测字符串
      * @return {boolean} 是否不为空白
      */
     static isNotBlank(str) {
@@ -46,7 +53,7 @@ class StringUtil {
 
     /**
      * 判断是否包含空白字符
-     * @param strs 字符串列表
+     * @param strs {string} 字符串列表
      * @return {boolean}
      */
     static hasBlank(...strs) {
@@ -66,7 +73,7 @@ class StringUtil {
 
     /**
      * 判断给定字符串是否空白
-     * @param strs
+     * @param strs {string} 被检测字符列表
      */
     static isAllBlank(...strs) {
         if (arrayUtil.isEmpty(strs)) {
@@ -86,7 +93,7 @@ class StringUtil {
      * 1、为null <br>
      * 2、为""<br>
      * 3. undefined <br>
-     * @param str 被检测的字符串
+     * @param str {string} 被检测的字符串
      * @return {boolean} 是否为空
      */
     static isEmpty(str) {
@@ -98,7 +105,7 @@ class StringUtil {
      * @author ycx
      * 检测字符串是否不为空</br>
      *  参考 isEmpty
-     * @param str 被检测字符串
+     * @param str {string}被检测字符串
      * @return {boolean} 是否不为空
      */
     static isNotEmpty(str) {
@@ -108,7 +115,7 @@ class StringUtil {
     /**
      * @author ycx
      * 判断字符串列表是否包含空字符串列表
-     * @param strs b被检测字符串列表
+     * @param strs {string} 被检测字符串列表
      * @return {boolean} 是否含有
      */
     static hasEmpty(...strs){
@@ -127,7 +134,7 @@ class StringUtil {
     /**
      * @author ycx
      * 判断字符串列表是否全是空字符串
-     * @param strs 被检测字符串列表
+     * @param strs {string} 被检测字符串列表
      * @return {boolean} 是否不包含
      */
     static hasAllEmpty(...strs){

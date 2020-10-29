@@ -7,9 +7,9 @@
 class Snowflake {
     /**
      *
-     * @param workerId 工作站id
-     * @param dataCenterId 数据中心
-     * @param sequence
+     * @param workerId {BigInt} 工作站id
+     * @param dataCenterId {BigInt}数据中心
+     * @param sequence {BigInt}
      * @constructor
      */
     constructor(workerId, dataCenterId, sequence) {
@@ -53,6 +53,10 @@ class Snowflake {
         return BigInt(Date.now());
     };
 
+    /**
+     * 获取下一个
+     * @return {bigint}
+     */
     nextId() {
         let timestamp = this.timeGen();
         if (timestamp < this.lastTimestamp) {

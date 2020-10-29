@@ -6,8 +6,8 @@ class PageUtil {
 
     /**
      * 根据总数计算总页数
-     * @param totalCount 总数
-     * @param pageSize 没页页面大小
+     * @param totalCount {number} 总数
+     * @param pageSize {number} 页页面大小
      * @return {Number}
      */
     static totalPage(totalCount, pageSize) {
@@ -19,9 +19,9 @@ class PageUtil {
 
     /**
      * 彩虹分页算法
-     * @param pageNo 页码
-     * @param totalPage 总页数
-     * @param displayCount 每屏展示记录数
+     * @param pageNo {number} 页码
+     * @param totalPage {number} 总页数
+     * @param displayCount {number} 每屏展示记录数
      */
     static rainbow(pageNo, totalPage, displayCount) {
         //

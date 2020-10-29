@@ -1,56 +1,62 @@
+const net = require('net');
+
 /**
  * @author ycx
  * @description 网络工具类
  */
 class NetUtil {
 
-    /**
-     * IP与掩码的分割符
-     * @type {string}
-     */
-    static #IP_MASK_SPLIT_MARK = '/';
 
     /**
-     * 格式化ip段
-     * @param ip {string} ip 地址
-     * @param mask {string} 掩码
-     * @return {string} 返回xxx.xxx.xxx.xxx/mask的格式
+     *  有效最大端口号
+     * @type {number}
      */
-    static formatIpBlock(ip, mask) {
-        return ip + this.#IP_MASK_SPLIT_MARK + mask;
+    static #PORT_RANGE_MAX = 0xFFFF;
+
+
+    /**
+     * 判断是否有效端口
+     * @param port {number} 端口号
+     * @return {boolean} 是否有效
+     */
+    static isValidPort(port) {
+        return port > 0 && port <= this.#PORT_RANGE_MAX;
     }
 
     /**
-     *  根据数字值获取ip v4地址：xx.xx.xx.xx
-     * @param numIp {number}
-     * @return {string} 返回xxx.xxx.xxx.xxx格式ip地址
+     * 检测本地端口是否可用
+     * @param port {number} 端口号
+     * @return Promise({boolean})
      */
-    static numToIpv4(numIp) {
-        let ip1 = (numIp >>> 24) >>> 0;
-        let ip2 = ((numIp << 8) >>> 24) >>> 0;
-        let ip3 = (numIp << 16) >>> 24;
-        let ip4 = (numIp << 24) >>> 24;
+    static async isUsableLocalPort(port) {
+        //检测是否合法端口
+        if (!this.isValidPort(port)) {
+            return false;
+        }
+        let server = net.createServer().listen(port);
 
-        return ip1 + '.' + ip2 + '.' + ip3 + '.' + ip4;
-    }
+        //获取回调
+        return new Promise(resolve => {
 
-    /**
-     * 根据ipv4 地址转换为数字类型
-     * @param ipv4Str {string}
-     * @return {number}
-     */
-    static ipv4ToNum(ipv4Str) {
-        let num = 0;
-        //数组
-        ipv4Str = ipv4Str.split('.');
-        num = Number(ipv4Str[0]) * 256 * 256 * 256 + Number(ipv4Str[1]) * 256 * 256 + Number(ipv4Str[2]) * 256 + Number(ipv4Str[3]);
-        num = num >>> 0;
-        return num;
+            server.on('listening', () => {
+                //关闭服务
+                server.close();
 
+                resolve(true);
+            });
+            server.on('error', (err) => {
+                //端口被占用
+                if ('EADDRINUSE' === err.code) {
+                    resolve(false);
+                }
+            });
 
+        });
     }
 
 
 }
 
 module.exports = NetUtil
+
+

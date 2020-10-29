@@ -6,7 +6,7 @@ class UUID {
 
     /**
      * 获取伪随机uuid
-     * @return {string}
+     * @return {string} 带下划线的uuid
      */
     static randomUUID() {
         // let s = [];

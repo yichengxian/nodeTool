@@ -10,8 +10,8 @@ class RandomWeightUtil {
 
     /**
      * 添加权重对象
-     * @param obj 对象
-     * @param weight 权重值 需要配置 整数
+     * @param obj {Object} 对象
+     * @param weight {number} 权重值 需要配置 整数
      * @return {RandomWeightUtil}
      */
     add(obj, weight) {
@@ -23,7 +23,7 @@ class RandomWeightUtil {
 
     /**
      * @description: 清空权重对象
-     *
+     *  @return {Object}
      */
     clear() {
         return this.#weightArr.splice(0, this.#weightArr.length);
@@ -34,7 +34,7 @@ class RandomWeightUtil {
      * 获取下一个随机权重对象
      * @return {Object}
      */
-    next = function () {
+    next() {
         if (arrayUtil.isEmpty(this.#weightArr)) {
             return null;
         }
