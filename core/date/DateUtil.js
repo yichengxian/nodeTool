@@ -1,3 +1,5 @@
+const DatePattern = require('./DatePattern');
+
 /**
  * date工具类
  */
@@ -61,7 +63,7 @@ class DateUtil {
      * @return {number}
      */
     static dayOfWeek(date) {
-        return date.getDay()
+        return date.getDay();
     }
 
     /**
@@ -70,7 +72,7 @@ class DateUtil {
      * @return {boolean}
      */
     static isAM(date) {
-        return date.getHours() > 12
+        return date.getHours() > 12;
     }
 
     /**
@@ -84,19 +86,19 @@ class DateUtil {
 
 
     /**
-     *
+     * 格式化时间
      * @param date {Date}
      * @param formatStr {string} 例如  yyyy-MM-dd HH:mm:ss
      */
     static format(date, formatStr) {
 
         let o = {
-            "M+": date.getMonth() + 1, //月份
+            "M+": this.month(date), //月份
             "d+": date.getDate(), //日
             "H+": date.getHours(), //小时
             "m+": date.getMinutes(), //分
             "s+": date.getSeconds(), //秒
-            "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+            "q+": this.quarter(date), //季度
             "S": date.getMilliseconds() //毫秒
         };
         if (/(y+)/.test(formatStr)) {
@@ -110,8 +112,48 @@ class DateUtil {
         return formatStr;
     }
 
+    /**
+     * 格式化时间为 yyyy-MM-dd HH:mm:ss
+     * @param date {Date} 指定时间
+     * @return {string} 格式化后的日期
+     */
+    static formatDateTime(date) {
+        return this.format(date, DatePattern.NORM_DATETIME_PATTERN);
+    }
+
+
+    /**
+     * 格式化时间为 yyyy-MM-dd
+     * @param date {Date} 指定时间
+     * @return {string} 格式化后的日期
+     */
+    static formatDate(date) {
+        return this.format(date, DatePattern.NORM_DATE_PATTERN);
+
+    }
+
+    /**
+     * 格式化时间为 HH:mm:ss
+     * @param date {Date} 指定时间
+     *
+     */
+    static formatTime(date) {
+        return this.format(date, DatePattern.NORM_TIME_PATTERN);
+    }
+
+
+    /**
+     *  格式化时间为 中国时间
+     *  yyyy年MM月dd日HH时mm分ss秒
+     * @param date {Date} 指定时间
+     * @return {string} 格式化后的时间字符串
+     */
+    static formatChineseDateTime(date) {
+        this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
+    }
+
 }
 
 module.exports = DateUtil
 
-console.log(DateUtil.format(new Date(),'yyyy-MM-dd HH:mm:ss'))
+

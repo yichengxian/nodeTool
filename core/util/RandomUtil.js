@@ -44,7 +44,7 @@ class RandomUtil {
     }
 
     /**
-     *从数组中随机获取 一个元素
+     *从前几个数组中随机获取 一个元素
      * @param arr {Array} 数组对象
      * @param limit {number} 限制的前n项
      */

@@ -34,5 +34,13 @@ class DatePattern{
      */
     static NORM_DATETIME_PATTERN ='yyyy-MM-dd HH:mm:ss';
 
+    /**
+     * 中国时间格式  yyyy年MM月dd日 HH时mm分ss秒
+     * @type {string}
+     */
+   static CHINESE_DATE_TIME_PATTERN = 'yyyy年MM月dd日HH时mm分ss秒';
+
 
 }
+
+module.exports =DatePattern
