@@ -43,5 +43,5 @@ class PhoneUtil {
 
 }
 
-module.exports = PatternPooL
+module.exports = PhoneUtil
 

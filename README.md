@@ -1,26 +1,29 @@
-# JS-Tool
+# nodeTool
 
-#### 介绍
-一个随意撸的js工具类
+在使用nodejs使用的部分工具类封装
 
-#### 软件架构
-采用nodejs为此进行开发的
+## 介绍
+在使用node开发中会遇到各种需要封装，为此，把他们封装，提供参考;
+~~均采用原生js手撸(996当中摸鱼)~~
 
+## 工具类实现列表
 
+- StringUtil 字符串工具
+- MapUtil map工具
+- BufferUtil buffer工具
+- DateUtil 日期工具
+- UUID uuid(~~模仿java写的~~)
+- Snowflake 推特雪花算法
+- ObjectUtil 对象工具
+- ArrayUtil array工具
+- PageUtil 分页工具
+- RandomUtil 随机工具
+- PhoneUtil 手机号工具
+- RandomWeightUtil 随机权重工具
+- BufferUtil buffer工具
+- NetUtil 网络工具
+- IPV4Util ipv4工具
 
-#### 参与贡献
+## 如何使用
+ ~~cv大法，哈哈哈,没什么值得的~~
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

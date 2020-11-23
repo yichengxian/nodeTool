@@ -1,10 +1,10 @@
 {
-  "name": "js-tool",
+  "name": "nodeTool",
   "version": "1.0.0",
-  "description": "#### Description 一个随意撸的js工具类，不一定好用，欢迎完善",
+  "description": "nodejs工具封装合集",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"no more \" && exit 1"
   },
   "repository": {
     "type": "git",
