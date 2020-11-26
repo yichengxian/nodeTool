@@ -1,4 +1,4 @@
-const stringUtil = require('../core/util/StringUtil');
+const stringUtil = require('../core/string/StringUtil');
 const mapUtil = require('../core/map/MapUtil');
 
 /**

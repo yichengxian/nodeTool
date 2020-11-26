@@ -1,5 +1,5 @@
 
-const arrayUtil = require('../core/util/ArrayUtil');
+const arrayUtil = require('../array/ArrayUtil');
 /**
  * @author ycx
  * @description : 简单实现的随机权重工具类

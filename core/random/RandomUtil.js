@@ -1,5 +1,5 @@
-const StringUtil = require('./StringUtil');
-const ArrayUtil = require('./ArrayUtil');
+const StringUtil = require('../string/StringUtil');
+const ArrayUtil = require('../array/ArrayUtil');
 
 /**
  * @author ycx

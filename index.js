@@ -1,13 +1,13 @@
 //字符串工具类
-const StringUtil = require('./core/util/StringUtil');
+const StringUtil = require('./core/string/StringUtil');
 //对象操作工具类
-const ObjectUtil = require('./core/util/ObjectUtil');
+const ObjectUtil = require('./core/object/ObjectUtil');
 //数组工具类
-const ArrayUtil = require('./core/util/ArrayUtil');
+const ArrayUtil = require('./core/array/ArrayUtil');
 //分页工具类
 const PageUtil = require('./core/util/PageUtil');
 //随机工具类
-const RandomUtil = require('./core/util/RandomUtil');
+const RandomUtil = require('./core/random/RandomUtil');
 //手机号工具类
 const PhoneUtil = require('./core/util/PhoneUtil');
 //推特雪花算法
@@ -17,7 +17,7 @@ const UUID = require('./core/lang/UUID');
 //日期工具类
 const DateUtil = require('./core/date/DateUtil');
 //随机权重工具类
-const RandomWeightUtil = require('./random/RandomWeightUtil');
+const RandomWeightUtil = require('./core/random/RandomWeightUtil');
 //buffer工具类
 const BufferUtil = require('./core/buffer/BufferUtil');
 //map工具类
@@ -26,6 +26,8 @@ const MapUtil = require('./core/map/MapUtil');
 const NetUtil = require('./core/net/NetUtil');
 //ipv4 工具类
 const IPV4Util = require('./core/net/Ipv4Util');
+//os 工具类 
+const OsUtil = require('./core/os/OSUtil');
 
 
 module.exports ={
@@ -42,7 +44,8 @@ module.exports ={
     BufferUtil,
     MapUtil,
     NetUtil,
-    IPV4Util
+    IPV4Util,
+    OsUtil,
 }
 
 

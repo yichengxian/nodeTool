@@ -1,5 +1,5 @@
 const net = require('net');
-const os = require('os');
+const OSUtil = require('../os/OSUtil');
 /**
  * @author ycx
  * @description 网络工具类
@@ -59,16 +59,15 @@ class NetUtil {
      * @return {string | (() => AddressInfo) | (() => (AddressInfo | {})) | (() => (AddressInfo | string | null))}
      */
     static getIPV4Address() {
-        const interfaces = os.networkInterfaces();
-        for (const devName in interfaces) {
-            const iface = interfaces[devName];
-            for (let i = 0; i < iface.length; i++) {
-                let alias = iface[i];
-                if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
-                    return alias.address;
-                }
-            }
-        }
+        return OSUtil.getIPV4Address();
+    }
+
+    /**
+     *  获取本机ipv6地址
+     * @return {string | (() => AddressInfo) | (() => (AddressInfo | {})) | (() => (AddressInfo | string | null))}
+     */
+    static getIPV6Address(){
+        return OSUtil.getIPV6Address();
     }
 
 

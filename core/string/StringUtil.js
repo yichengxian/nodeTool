@@ -1,5 +1,5 @@
 
-const arrayUtil = require('./ArrayUtil');
+const arrayUtil = require('../array/ArrayUtil');
 
 /**
  * 字符串工具类
