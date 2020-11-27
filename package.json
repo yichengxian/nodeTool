@@ -10,7 +10,26 @@
     "type": "git",
     "url": "https://gitee.com/yichengxian/js-tool.git"
   },
-  "keywords": [],
+  "keywords": [
+    "nodeTool",
+    "tool",
+    "util",
+    "md5",
+    "NetUtil",
+    "StringUtil",
+    "ObjectUtil",
+    "DateUtil",
+    "uuid",
+    "snowflake",
+    "mapUtil",
+    "randomUtil",
+    "weightUtil",
+    "streamUtil",
+    "bufferUtil",
+    "pageUtil",
+    "phoneUtil",
+    "arrayUtil"
+  ],
   "author": "ycx",
   "license": "MIT"
 }

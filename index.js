@@ -26,9 +26,10 @@ const MapUtil = require('./core/map/MapUtil');
 const NetUtil = require('./core/net/NetUtil');
 //ipv4 工具类
 const IPV4Util = require('./core/net/Ipv4Util');
-//os 工具类 
+//os 工具类
 const OsUtil = require('./core/os/OSUtil');
-
+//md5 工具
+const Md5Util = require('./core/crypto/Md5Util');
 
 module.exports ={
     StringUtil,
@@ -46,6 +47,7 @@ module.exports ={
     NetUtil,
     IPV4Util,
     OsUtil,
+    Md5Util,
 }
 
 
