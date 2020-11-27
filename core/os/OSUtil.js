@@ -9,6 +9,7 @@ class OSUtil {
 
     /**
      * 获取hostname
+     * @return {string}
      */
     static getHostName() {
 
@@ -57,9 +58,10 @@ class OSUtil {
     /**
      * 获取操作系统版本<br/>
      *  注意不是 获取node版本
+     *  @return {string}
      */
     static getVersion() {
-        os.version()
+        return os.version();
     }
 
     /**
@@ -70,9 +72,9 @@ class OSUtil {
         const interfaces = os.networkInterfaces();
         for (const devName in interfaces) {
             //
-            console.log(devName)
+            //console.log(devName)
             const iface = interfaces[devName];
-            console.log(iface)
+            //console.log(iface)
             for (let i = 0; i < iface.length; i++) {
                 let alias = iface[i];
                 //console.log(alias)
@@ -110,15 +112,15 @@ class OSUtil {
      * 例如： linux ，android，win32等
      * @return {NodeJS.Platform}
      */
-    static getPlatform(){
+    static getPlatform() {
         return os.platform();
     }
 
     /**
-     * 获取当前系统架构 x86 x64
+     * 获取当前系统架构 x86 x64 arm
      * @return {string}
      */
-    static getArch(){
+    static getArch() {
         return os.arch();
     }
 
@@ -126,7 +128,7 @@ class OSUtil {
      * 获取当前系统总内存（以字节为单位）
      * @return {number}
      */
-    static getTotalmem(){
+    static getTotalmem() {
         return os.totalmem();
     }
 
@@ -136,7 +138,7 @@ class OSUtil {
      *
      * @return {number}
      */
-    static getFreemem(){
+    static getFreemem() {
         return os.freemem();
     }
 
@@ -144,7 +146,7 @@ class OSUtil {
      * 获取系统 运行时间 （以秒为单位）
      * @return {number}
      */
-    static getUptime(){
+    static getUptime() {
         return os.uptime();
     }
 
@@ -154,7 +156,7 @@ class OSUtil {
      * 2,在 Windows 上是 \r\n。
      * @return {string}
      */
-    static getEOL(){
+    static getEOL() {
         return os.EOL;
     }
 }
