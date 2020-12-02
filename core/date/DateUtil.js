@@ -27,7 +27,7 @@ class DateUtil {
      * @return {number} 4位/年
      */
     static year(date) {
-        return date.getFullYear()
+        return date.getFullYear();
     }
 
     /**
