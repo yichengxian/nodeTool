@@ -149,7 +149,7 @@ class DateUtil {
      * @return {string} 格式化后的时间字符串
      */
     static formatChineseDateTime(date) {
-        this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
+       return  this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
     }
 
     /**
