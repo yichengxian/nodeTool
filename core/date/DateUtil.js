@@ -152,6 +152,23 @@ class DateUtil {
         this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
     }
 
+    /**
+     * 获取指定日期当日的开始时间
+     * @param date  {Date}
+     * @return {Date}
+     */
+    static getStartDate(date) {
+        return new Date(date.toLocaleDateString());
+    }
+
+    /**
+     * 获取当天的开始时间
+     * @return {Date}
+     */
+    static getToDayStartDate(){
+        return this.getStartDate(new Date());
+    }
+
 }
 
 module.exports = DateUtil
