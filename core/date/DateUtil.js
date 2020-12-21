@@ -149,7 +149,7 @@ class DateUtil {
      * @return {string} 格式化后的时间字符串
      */
     static formatChineseDateTime(date) {
-       return  this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
+        return this.format(date, DatePattern.CHINESE_DATE_TIME_PATTERN);
     }
 
     /**
@@ -165,8 +165,26 @@ class DateUtil {
      * 获取当天的开始时间
      * @return {Date}
      */
-    static getToDayStartDate(){
+    static getToDayStartDate() {
         return this.getStartDate(new Date());
+    }
+
+    /**
+     *  获取某一天的结束时间
+     * @param date {Date} 指定时间
+     * @return {Date}
+     */
+    static getEndDate(date) {
+
+        return new Date(new Date(date.toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1);
+    }
+
+    /**
+     * 获取当天的结束时间
+     * @return {Date}
+     */
+    static getToDayEndDate(){
+        return this.getEndDate(new Date());
     }
 
 }
