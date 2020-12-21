@@ -10,7 +10,7 @@ class Md5Util {
 
     /**
      *  创建32位 md5
-     * @param value {string}
+     * @param value {BinaryLike}
      * @return {string} 32位字符 的md5数值
      */
     static createMd5(value) {

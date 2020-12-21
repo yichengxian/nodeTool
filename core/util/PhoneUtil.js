@@ -18,7 +18,7 @@ class PhoneUtil {
      * @return {boolean}
      */
     static isMobile(value) {
-        return PatternPooL.MOBILE.test(phoneNum)
+        return PatternPooL.MOBILE.test(value)
     }
 
     /**

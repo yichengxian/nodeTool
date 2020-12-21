@@ -1,9 +1,8 @@
+const StringUtil = require("../string/StringUtil");
 /**
  * @author ycx
  * url 工具类
  */
-const StringUtil = require("../string/StringUtil");
-
 class UrlUtil {
 
     /**
@@ -15,7 +14,7 @@ class UrlUtil {
         let obj = {}
         const arr = url.split('?');
         if (arr.length < 1) {
-            return resObj;
+            return obj;
         }
         //第一号数组
         const pList = new URLSearchParams(arr[1])
@@ -23,7 +22,7 @@ class UrlUtil {
             if (StringUtil.isNotEmpty(val)) {
                 obj[key] = val;
             }
-        })
+        });
         return obj;
     }
 
