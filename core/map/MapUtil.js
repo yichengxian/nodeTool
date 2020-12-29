@@ -10,7 +10,7 @@ class MapUtil {
      * @return {boolean}
      */
     static isEmpty(map) {
-        return null === map || undefined === map || 0 === map.size;
+        return !(typeof map) || 0 === map.size;
     }
 
     /**

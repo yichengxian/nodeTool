@@ -36,7 +36,7 @@ class Ipv4Util {
 
     /**
      * 根据ipv4 地址转换为数字类型
-     * @param ipv4Str {string}
+     * @param ipv4Str {string} 例如"192.168.1.1"
      * @return {number}
      */
     static ipv4ToNum(ipv4Str) {

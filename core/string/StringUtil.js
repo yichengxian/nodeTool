@@ -11,7 +11,13 @@ class StringUtil {
      * 空字符串
      * @type {string}
      */
-    static Empty = '';
+    static BlankStr = ' ';
+
+    /**
+     *
+     * @type {string}
+     */
+    static RandomStr ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     /**
      * @author ycx
@@ -26,13 +32,13 @@ class StringUtil {
      */
     static isBlank(str) {
 
-        if (this.isEmpty(str) || '' === str) {
+        if (this.isEmpty(str)) {
             return true;
         }
 
         for (let i = 0; i < str.length; i++) {
             //有一个不为' '
-            if (!(' ' === str[i])) {
+            if (!(this.BlankStr=== str[i])) {
                 return false;
             }
         }
@@ -47,7 +53,7 @@ class StringUtil {
      * @return {boolean} 是否不为空白
      */
     static isNotBlank(str) {
-        return !this.isBank(str);
+        return !this.isBlank(str);
     }
 
 
@@ -81,10 +87,11 @@ class StringUtil {
         }
 
         for (let str of strs) {
-            if (this.isNotBlank()) {
+            if (this.isNotBlank(str)) {
                 return false;
             }
         }
+        return true;
     }
 
     /**
@@ -124,7 +131,7 @@ class StringUtil {
         }
 
         for (let str of strs) {
-            if (this.isEmpty(strs)) {
+            if (this.isEmpty(str)) {
                 return true
             }
         }

@@ -14,7 +14,7 @@ class PageUtil {
         if (0 === pageSize) {
             return 0;
         }
-        return 0 === (totalCount % pageSize) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
+        return 0 === (totalCount % pageSize) ? (totalCount / pageSize) : Math.floor(totalCount / pageSize + 1);
     }
 
     /**
@@ -37,7 +37,7 @@ class PageUtil {
         }
 
         if (totalPage < displayCount) {
-            length = totalCount;
+            length =totalPage;
         }
 
         let result = new Array(length);

@@ -1,5 +1,6 @@
 const net = require('net');
 const OSUtil = require('../os/OSUtil');
+
 /**
  * @author ycx
  * @description 网络工具类
@@ -8,14 +9,15 @@ class NetUtil {
 
 
     /**
-     *  有效最大端口号
+     *  有效最大端口号 65535
      * @type {number}
      */
     static #PORT_RANGE_MAX = 0xFFFF;
 
 
     /**
-     * 判断是否有效端口
+     * 判断是否有效端口 这里是0 -65535
+     * 注:有些端口是1024-65535
      * @param port {number} 端口号
      * @return {boolean} 是否有效
      */
@@ -29,26 +31,25 @@ class NetUtil {
      * @return Promise({boolean})
      */
     static async isUsableLocalPort(port) {
-        //检测是否合法端口
-        if (!this.isValidPort(port)) {
-            return false;
-        }
-        let server = net.createServer().listen(port);
 
         //获取回调
         return new Promise(resolve => {
-
+            //检测是否合法端口
+            if (!this.isValidPort(port)) {
+                resolve(false);
+                return;
+            }
+            let server = net.createServer().listen(port);
             server.on('listening', () => {
                 //关闭服务
                 server.close();
-
                 resolve(true);
             });
             server.on('error', (err) => {
-                //端口被占用
-                if ('EADDRINUSE' === err.code) {
-                    resolve(false);
-                }
+
+                // 'EACCES' 权限被拒绝
+                // 'EADDRINUSE‘ 端口被占用
+                resolve(false);
             });
 
         });
@@ -66,7 +67,7 @@ class NetUtil {
      *  获取本机ipv6地址
      * @return {string | (() => AddressInfo) | (() => (AddressInfo | {})) | (() => (AddressInfo | string | null))}
      */
-    static getIPV6Address(){
+    static getIPV6Address() {
         return OSUtil.getIPV6Address();
     }
 

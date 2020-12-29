@@ -9,7 +9,7 @@ class DateUtil {
      * 获取当前时间
      * @return {Date} 当前时间对象
      */
-    static date() {
+    static nowDate() {
         return new Date();
     }
 
@@ -17,8 +17,17 @@ class DateUtil {
      * 获取当前秒数
      * @return {number}
      */
-    static dateSecond() {
-        return this.date().now() / 1000;
+    static nowDateSecond() {
+        return this.dateSecond(this.nowDate());
+    }
+
+    /**
+     * 获取日期秒数
+     * @param date {Date}
+     * @return {number}
+     */
+    static dateSecond(date) {
+        return Math.floor(date.getTime() / 1000);
     }
 
     /**
@@ -31,12 +40,13 @@ class DateUtil {
     }
 
     /**
-     * 获得指定日期所属季度，从1开始计数
+     * 获得指定日期所属季度，从1开始计数 <br/>
+     * 注：这里是每个月为一个季度
      * @param date {Date} 时间
      * @return {number} 季度
      */
     static quarter(date) {
-        return this.month(date) / 3 + 1;
+        return Math.floor(date.getMonth() / 3+1);
     }
 
     /**
@@ -54,7 +64,9 @@ class DateUtil {
      * @return {number}
      */
     static dayOfYear(date) {
-        return Math.ceil((this.date() - new Date(this.year(date).toString())) / (24 * 60 * 60 * 1000)) + 1;
+        //一天 = 86400000ms =24 * 60 * 60 * 100
+
+        return Math.ceil((this.nowDate()- new Date(this.year(date).toString())) /86400000 ) + 1;
     }
 
     /**
@@ -72,7 +84,8 @@ class DateUtil {
      * @return {boolean}
      */
     static isAM(date) {
-        return date.getHours() > 12;
+
+        return date.getHours() < 12;
     }
 
     /**
@@ -175,15 +188,15 @@ class DateUtil {
      * @return {Date}
      */
     static getEndDate(date) {
-
-        return new Date(new Date(date.toLocaleDateString()).getTime() + 24 * 60 * 60 * 1000 - 1);
+        //一天少一毫秒 = 24 * 60 * 60 * 1000 - 1  = 86399999
+        return new Date(this.getStartDate(date).getTime()+86399999);
     }
 
     /**
      * 获取当天的结束时间
      * @return {Date}
      */
-    static getToDayEndDate(){
+    static getToDayEndDate() {
         return this.getEndDate(new Date());
     }
 

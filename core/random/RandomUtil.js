@@ -9,18 +9,23 @@ class RandomUtil {
 
 
     /**
-     * 获取随机范围的int数值
-     * @param min {number}
-     * @param max {number}
+     * 获取随机范围的int数值 包含min 不包含max
+     * @param min {number} 最小数
+     * @param max {number} 最大数
+     * @return {number}
      */
     static randomInt(min, max) {
-        if (Number.isNaN(Number(min))) {
+        if (Number.isNaN(min)) {
             min = 0;
         }
-        if (Number.isNaN(Number(min))) {
+        if (Number.isNaN(min)) {
             max = 0;
         }
-        return parseInt(Math.random() * (max - min + 1) + min, 10);
+
+        const number = Math.random();
+        const x = number * (max - min) + min;
+
+        return Math.floor(x);
     }
 
     /**
@@ -35,8 +40,8 @@ class RandomUtil {
             return StringUtil.Empty;
         }
         let randStr = '';
-        for (let i = 0; i < str.length; i++) {
-            let strElement = str[this.randomInt(0, str.length - 1)];
+        for (let i = 0; i < length; i++) {
+            let strElement = str[this.randomInt(0, str.length)];
             randStr += strElement;
         }
         return randStr;
@@ -44,24 +49,33 @@ class RandomUtil {
     }
 
     /**
-     *从前几个数组中随机获取 一个元素
-     * @param arr {Array} 数组对象
+     *  从前几个数组中随机获取 一个元素
+     * @param arr {Array<*>} 数组对象
      * @param limit {number} 限制的前n项
+     * @return {*}
      */
     static randomEle(arr, limit) {
         if (ArrayUtil.isEmpty(arr)) {
-            return ArrayUtil.EMPTY;
+            return null;
         }
         if (limit >= arr.length) {
             limit = arr.length;
         }
-        return arr[this.randomInt(0, limit - 1)];
+        return arr[this.randomInt(0, limit)];
 
+    }
+
+    /**
+     * 从A-Za-z0-9中获取指定长度的字符串
+     * @param length
+     * @return {string}
+     */
+    static randomEnStr(length) {
+        return this.randomStr(StringUtil.RandomStr, length);
     }
 
 
 }
 
 module.exports = RandomUtil
-
 

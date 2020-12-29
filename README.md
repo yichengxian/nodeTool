@@ -12,7 +12,7 @@
 - MapUtil map工具
 - BufferUtil buffer工具
 - DateUtil 日期工具
-- UUID uuid(~~模仿java写的~~)
+- UUID UUIDTest(~~模仿java写的~~)
 - Snowflake 推特雪花算法
 - ObjectUtil 对象工具
 - ArrayUtil array工具
@@ -21,7 +21,7 @@
 - PhoneUtil 手机号工具
 - RandomWeightUtil 随机权重工具
 - BufferUtil buffer工具
-- NetUtil 网络工具
+- NetUtilTest 网络工具
 - IPV4Util ipv4工具
 - OSUtil 系统操作工具(~~好像并不需要怎么封装呀~~)
 

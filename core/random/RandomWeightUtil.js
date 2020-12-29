@@ -6,6 +6,10 @@ const arrayUtil = require('../array/ArrayUtil');
  * todo
  */
 class RandomWeightUtil {
+    /**
+     *  私有外部无法访问
+     * @type {[]}
+     */
     #weightArr = []
 
     /**
