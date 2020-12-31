@@ -1,7 +1,7 @@
 /**
  * @author:ycx
  *
- * todo
+ * todo  js compile()
  * @description: 常见的正则表达式
  */
 class PatternPooL {

@@ -1,3 +1,5 @@
+const MapUtil = require('../map/MapUtil');
+
 /**
  * 对象处理工具类
  */
@@ -32,6 +34,26 @@ class ObjectUtil {
      */
     static isNotEmpty(obj) {
         return !this.isEmpty(obj)
+    }
+
+    /**
+     * map转换为对象
+     * @param map {Map} map对象
+     * @return {Object} 转换后的对象
+     */
+    static mapToObject(map) {
+        let obj = {};
+        map.forEach((value, key) => obj[key] = value);
+        return obj;
+    }
+
+    /**
+     * 对象转map
+     * @param obj {Object}
+     * @return {Map}
+     */
+    static objectToMap(obj) {
+        return MapUtil.objectToMap(obj);
     }
 }
 
