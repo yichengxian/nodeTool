@@ -8,23 +8,25 @@
 
 ## 工具类实现列表
 
-- StringUtil 字符串工具
-- MapUtil map工具
-- BufferUtil buffer工具
-- DateUtil 日期工具
-- UUID UUIDTest(~~模仿java写的~~)
-- Snowflake 推特雪花算法
-- ObjectUtil 对象工具
-- ArrayUtil array工具
-- PageUtil 分页工具
-- RandomUtil 随机工具
-- PhoneUtil 手机号工具
-- RandomWeightUtil 随机权重工具
-- BufferUtil buffer工具
-- NetUtilTest 网络工具
-- IPV4Util ipv4工具
-- OSUtil 系统操作工具(~~好像并不需要怎么封装呀~~)
+- [StringUtil](./core/string/StringUtil.js) 字符串工具
+- [MapUtil](./core/map/MapUtil.js) map工具
+- [BufferUtil](./core/buffer/BufferUtil.js) buffer工具
+- [DateUtil](./core/date/DateUtil.js) 日期工具
+- [UUID](./core/lang/UUID.js) UUID生成(~~模仿java写的~~)
+- [Snowflake](./core/lang/Snowflake.js) 推特雪花算法
+- [ObjectUtil](./core/object/ObjectUtil.js) 对象工具
+- [ArrayUtil](./core/array/ArrayUtil.js) array工具
+- [PageUtil](./core/util/PageUtil.js) 分页工具
+- [RandomUtil](./core/random/RandomUtil.js) 随机工具
+- [PhoneUtil](./core/util/PhoneUtil.js) 手机号工具
+- [RandomWeightUtil](./core/random/RandomWeightUtil.js) 随机权重工具
+- [BufferUtil](./core/buffer/BufferUtil.js) buffer工具
+- [NetUtil](./core/net/NetUtil.js) 网络工具
+- [IPV4Util](./core/net/Ipv4Util.js) ipv4工具
+- [OSUtil](./core/os/OSUtil.js) 系统操作工具(~~好像并不需要怎么封装呀~~)
 
 ## 如何使用
  ~~cv大法，哈哈哈,没什么值得的~~
 
+## 用例
+所有用例在[test](./test)目录下
