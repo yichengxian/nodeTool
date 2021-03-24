@@ -30,6 +30,8 @@ const IPV4Util = require('./core/net/Ipv4Util');
 const OsUtil = require('./core/os/OSUtil');
 //md5 工具
 const Md5Util = require('./core/crypto/Md5Util');
+//字符格式化
+const StringFormatUtil = require('./core/string/StringFormatUtil');
 
 module.exports ={
     StringUtil,
@@ -48,6 +50,7 @@ module.exports ={
     IPV4Util,
     OsUtil,
     Md5Util,
+    StringFormatUtil
 }
 
 
