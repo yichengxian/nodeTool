@@ -102,6 +102,7 @@ class DateUtil {
      * 格式化时间
      * @param date {Date}
      * @param formatStr {string} 例如  yyyy-MM-dd HH:mm:ss
+     * @return {string}
      */
     static format(date, formatStr) {
 
@@ -148,7 +149,7 @@ class DateUtil {
     /**
      * 格式化时间为 HH:mm:ss
      * @param date {Date} 指定时间
-     *
+     * @return {string}
      */
     static formatTime(date) {
         return this.format(date, DatePattern.NORM_TIME_PATTERN);
