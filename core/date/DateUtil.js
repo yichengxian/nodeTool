@@ -201,6 +201,33 @@ class DateUtil {
         return this.getEndDate(new Date());
     }
 
+    /**
+     * 日期解析
+     * <link>https://www.cnblogs.com/liuxianan/p/js-date-format-parse.html</link>
+     * @param dateStr {string}
+     * @param format {string} 例如'yyyy-MM-dd'
+     * @return {Date|null}
+     */
+    static parse(dateStr,format){
+        format = format || DatePattern.NORM_DATE_PATTERN;
+        const obj = {y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0};
+        format.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function(m, $1, $2, $3, $4, idx, old)
+        {
+            dateStr = dateStr.replace(new RegExp($1+'(\\d{'+$2.length+'})'+$4), function(_m, _$1)
+            {
+                obj[$3] = parseInt(_$1);
+                return null;
+            });
+            return null;
+        });
+        obj.M--; // 月份是从0开始的，所以要减去1
+        const date = new Date(obj.y, obj.M, obj.d, obj.H, obj.m, obj.s);
+        if(obj.S !== 0){
+            date.setMilliseconds(obj.S); // 如果设置了毫秒
+        }
+        return date;
+    }
+
 }
 
 module.exports = DateUtil
