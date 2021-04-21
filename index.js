@@ -32,7 +32,13 @@ const OsUtil = require('./core/os/OSUtil');
 const Md5Util = require('./core/crypto/Md5Util');
 //字符格式化
 const StringFormatUtil = require('./core/string/StringFormatUtil');
+//正則
+const ReUtil = require('./core/reg/ReUtil');
+//错误
+const ErrorUtil = require('./core/error/ErrorUtil');
 
+
+//
 module.exports ={
     StringUtil,
     ObjectUtil,
@@ -50,7 +56,9 @@ module.exports ={
     IPV4Util,
     OsUtil,
     Md5Util,
-    StringFormatUtil
+    StringFormatUtil,
+    ReUtil,
+    ErrorUtil
 }
 
 
