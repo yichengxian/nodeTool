@@ -24,6 +24,12 @@
 - [NetUtil](./core/net/NetUtil.js) 网络工具
 - [IPV4Util](./core/net/Ipv4Util.js) ipv4工具
 - [OSUtil](./core/os/OSUtil.js) 系统操作工具(~~好像并不需要怎么封装呀~~)
+- [ReUtil](./core/reg/ReUtil.js) 正则工具(~~莫名发现好像js的正不是全匹配的不知道是不是姿势不太对~~)
+- [StringFormatUtil](./core/string/StringFormatUtil.js) 字符串格式化工具 (~~就是感觉没有就写一个~~)
+- [ErrorUtil](./core/error/ErrorUtil.js) 错误工具
+
+## 为什么用原生JS不用TS
+不想搞的那么麻烦,
 
 ## 如何使用
  ~~cv大法，哈哈哈,没什么值得的~~
