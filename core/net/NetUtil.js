@@ -1,6 +1,7 @@
 'use strict';
 const net = require('net');
 const OSUtil = require('../os/OSUtil');
+const StringUtil = require("../string/StringUtil");
 
 /**
  * @author ycx
@@ -70,6 +71,34 @@ class NetUtil {
      */
     static getIPV6Address() {
         return OSUtil.getIPV6Address();
+    }
+
+    /**
+     * 从多级反向代理中获得第一个非unknown IP地址
+     * @param ip {string} 获得的IP地址
+     * @return {string} 第一个非unknown IP地址
+     */
+    static getMultistageReverseProxyIp(ip){
+        if (StringUtil.isNotEmpty(ip) &&  ip.indexOf(",") > 0){
+            const ips = ip.trim().split(',');
+
+            for (let subIp of ips) {
+                if (false === this.isUnknown(subIp)){
+                    ip = subIp;
+                    break;
+                }
+            }
+        }
+        return ip;
+    }
+
+    /**
+     * 检测给定字符串是否为未知
+     * @param checkString {string}
+     * @return {boolean}
+     */
+    static isUnknown(checkString){
+        return StringUtil.isBlank(checkString) || 'unknown' === checkString.toLowerCase();
     }
 
 

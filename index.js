@@ -37,6 +37,8 @@ const ReUtil = require('./core/reg/ReUtil');
 //错误
 const ErrorUtil = require('./core/error/ErrorUtil');
 
+// no test
+const RequestUtil = require('./core/request/RequestUtil');
 
 //
 module.exports ={
@@ -58,7 +60,8 @@ module.exports ={
     Md5Util,
     StringFormatUtil,
     ReUtil,
-    ErrorUtil
+    ErrorUtil,
+    RequestUtil
 }
 
 
