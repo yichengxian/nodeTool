@@ -1,3 +1,4 @@
+'use strict';
 /**
  * date 格式化
  */

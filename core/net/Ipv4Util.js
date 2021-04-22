@@ -1,3 +1,4 @@
+'use strict';
 /**
  * @author ycx
  * @description ipv4 工具

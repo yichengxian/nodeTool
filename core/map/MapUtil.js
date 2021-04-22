@@ -1,3 +1,4 @@
+'use strict';
 const ObjectUtil = require('../object/ObjectUtil');
 
 /**

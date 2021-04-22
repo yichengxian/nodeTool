@@ -1,3 +1,4 @@
+'use strict';
 /**
  * @author ycx
  * @description：数组工具类

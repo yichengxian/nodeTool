@@ -1,3 +1,4 @@
+'use strict';
 /**
  * uuid 实现
  */

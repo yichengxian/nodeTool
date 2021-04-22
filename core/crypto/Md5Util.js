@@ -1,3 +1,4 @@
+'use strict';
 //并不是所有操作系统都可执行加密 所以在require 当中会产生异常
 const crypto = require('crypto');
 

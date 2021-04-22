@@ -1,5 +1,7 @@
+'use strict';
 
-const arrayUtil = require('../array/ArrayUtil');
+const ArrayUtil = require('../array/ArrayUtil');
+const RandomUtil = require('./RandomUtil');
 /**
  * @author ycx
  * @description : 简单实现的随机权重工具类
@@ -39,10 +41,10 @@ class RandomWeightUtil {
      * @return {Object}
      */
     next() {
-        if (arrayUtil.isEmpty(this.#weightArr)) {
+        if (ArrayUtil.isEmpty(this.#weightArr)) {
             return null;
         }
-        return this.#weightArr[Math.floor(Math.random() * this.#weightArr.length)];
+        return this.#weightArr[RandomUtil.randomInt(0,this.#weightArr.length)];
     };
 }
 

@@ -1,4 +1,4 @@
-
+'use strict';
 const PatternPooL = require('../lang/PatternPool');
 
 /**

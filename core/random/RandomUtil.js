@@ -1,3 +1,4 @@
+'use strict';
 const StringUtil = require('../string/StringUtil');
 const ArrayUtil = require('../array/ArrayUtil');
 
