@@ -1,3 +1,4 @@
+'use strict';
 const MapUtil = require('../map/MapUtil');
 
 /**

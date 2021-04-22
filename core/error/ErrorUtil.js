@@ -1,3 +1,4 @@
+'use strict';
 const StringFormatUtil = require('../string/StringFormatUtil');
 /**
  * @author yichengxian

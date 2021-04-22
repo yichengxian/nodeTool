@@ -1,3 +1,4 @@
+'use strict';
 const StringUtil = require("../string/StringUtil");
 const ObjectUtil = require("../object/ObjectUtil");
 const {URL} = require('url');
