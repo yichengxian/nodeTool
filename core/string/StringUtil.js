@@ -150,7 +150,7 @@ class StringUtil {
         }
 
         for (let str of strs) {
-            if (this.isNotEmpty(strs)) {
+            if (this.isNotEmpty(str)) {
                 return false
             }
         }
