@@ -34,11 +34,11 @@ class RandomUtil {
      * e.g. 'abcdefg'中获取长度为3随机字符串 ‘afg’;
      * @param str {string}
      * @param length {number} 随机字符串的长度
-     * @return {string}
+     * @return {string|null}
      */
     static randomStr(str, length) {
         if (StringUtil.isEmpty(str)) {
-            return StringUtil.Empty;
+            return null;
         }
         let randStr = '';
         for (let i = 0; i < length; i++) {
