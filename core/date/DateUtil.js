@@ -229,6 +229,17 @@ class DateUtil {
         return date;
     }
 
+
+    /**
+     * 获取本月第一天的日期
+     * @param date {Date}
+     * @return {Date}
+     */
+    static getFirstDayOfMonth(date){
+        date.setDate(1);
+        return date;
+    }
+
 }
 
 module.exports = DateUtil
