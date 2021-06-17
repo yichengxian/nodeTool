@@ -4,7 +4,9 @@
   "description": "nodejs工具封装合集",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no more \" && exit 1"
+    "test": "echo \"no more \" && exit 1",
+    "eslint":"eslint core/**",
+    "eslint-fix": "eslint --fix core/** "
   },
   "repository": {
     "type": "git",
@@ -31,5 +33,8 @@
     "arrayUtil"
   ],
   "author": "ycx",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.28.0"
+  }
 }

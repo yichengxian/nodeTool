@@ -121,7 +121,7 @@ class DateUtil {
         }
         for (let k in o) {
             if (new RegExp("(" + k + ")").test(formatStr)) {
-                formatStr = formatStr.replace(RegExp.$1, (1 === RegExp.$1.length) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                formatStr = formatStr.replace(RegExp.$1, 1 === RegExp.$1.length ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
             }
         }
         return formatStr;

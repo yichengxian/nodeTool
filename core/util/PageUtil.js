@@ -15,7 +15,7 @@ class PageUtil {
         if (0 === pageSize) {
             return 0;
         }
-        return 0 === (totalCount % pageSize) ? (totalCount / pageSize) : Math.floor(totalCount / pageSize + 1);
+        return 0 === totalCount % pageSize ? totalCount / pageSize : Math.floor(totalCount / pageSize + 1);
     }
 
     /**

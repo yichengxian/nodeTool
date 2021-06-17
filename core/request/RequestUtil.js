@@ -57,7 +57,7 @@ class RequestUtil {
         ip = request.ip
             || request._remoteAddress
             ||  request.socket.remoteAddress || request.connection.socket.remoteAddress
-            || (request.connection && request.connection.remoteAddress);
+            || request.connection && request.connection.remoteAddress;
 
         return NetUtil.getMultistageReverseProxyIp(ip);
     }

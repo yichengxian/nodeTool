@@ -18,13 +18,13 @@ class Snowflake {
         //this.twepoch = 0n;
         this.workerIdBits = 5n;
         this.dataCenterIdBits = 5n;
-        this.maxWrokerId = -1n ^ (-1n << this.workerIdBits); // 值为：31
-        this.maxDataCenterId = -1n ^ (-1n << this.dataCenterIdBits); // 值为：31
+        this.maxWrokerId = -1n ^ -1n << this.workerIdBits; // 值为：31
+        this.maxDataCenterId = -1n ^ -1n << this.dataCenterIdBits; // 值为：31
         this.sequenceBits = 12n;
         this.workerIdShift = this.sequenceBits; // 值为：12
         this.dataCenterIdShift = this.sequenceBits + this.workerIdBits; // 值为：17
         this.timestampLeftShift = this.sequenceBits + this.workerIdBits + this.dataCenterIdBits; // 值为：22
-        this.sequenceMask = -1n ^ (-1n << this.sequenceBits); // 值为：4095
+        this.sequenceMask = -1n ^ -1n << this.sequenceBits; // 值为：4095
         this.lastTimestamp = -1n;
         //设置默认值,从环境变量取
         this.workerId = 1n;
@@ -48,11 +48,11 @@ class Snowflake {
             timestamp = this.timeGen();
         }
         return BigInt(timestamp);
-    };
+    }
 
     timeGen(){
         return BigInt(Date.now());
-    };
+    }
 
     /**
      * 获取下一个
@@ -64,7 +64,7 @@ class Snowflake {
             throw new Error('Clock moved backwards. Refusing to generate id for ' + (this.lastTimestamp - timestamp));
         }
         if (this.lastTimestamp === timestamp) {
-            this.sequence = (this.sequence + 1n) & this.sequenceMask;
+            this.sequence = this.sequence + 1n & this.sequenceMask;
             if (this.sequence === 0n) {
                 timestamp = this.tilNextMillis(this.lastTimestamp);
             }
@@ -72,11 +72,11 @@ class Snowflake {
             this.sequence = 0n;
         }
         this.lastTimestamp = timestamp;
-        return ((timestamp - this.twepoch) << this.timestampLeftShift) |
-            (this.dataCenterId << this.dataCenterIdShift) |
-            (this.workerId << this.workerIdShift) |
+        return timestamp - this.twepoch << this.timestampLeftShift |
+            this.dataCenterId << this.dataCenterIdShift |
+            this.workerId << this.workerIdShift |
             this.sequence;
-    };
+    }
 
 }
 
