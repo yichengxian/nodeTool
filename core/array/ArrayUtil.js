@@ -1,4 +1,5 @@
 'use strict';
+
 /**
  * @author ycx
  * @description：数组工具类
@@ -79,13 +80,29 @@ class ArrayUtil {
     }
 
     /**
-     * 移除元素中指定元素
+     * 移除数组中匹配相同元素
      * @param arr {Array<*>}
-     * @param element {*};
+     * @param element {*}
      * @return {Array<*>}
      */
     static remove(arr, element) {
         return arr.filter(value => value !== element);
+    }
+
+
+    /**
+     * 移除数组中一个匹配的元素
+     * @param arr {Array<*>} 数组
+     * @param element {*} 要移除的元素
+     * @return {Array<*>}
+     */
+    static removeOne(arr, element) {
+
+        const index = arr.findIndex(value => value === element);
+        if (-1 !== index){
+            arr.splice(index,1);
+        }
+        return arr;
     }
 
     /**
@@ -94,7 +111,7 @@ class ArrayUtil {
      * @return {Array<*>} 去重的后的数组
      */
     static unique(arr) {
-        
+
         //return Array.from(new Set(arr));
 
         const newArr = [];
@@ -213,8 +230,8 @@ class ArrayUtil {
 
                 set.forEach(value => {
                     if (this.contains(newArr, value)) {
-                        newArr = this.remove(newArr,value);
-                    }else {
+                        newArr = this.remove(newArr, value);
+                    } else {
                         newArr.push(value);
                     }
                 })

@@ -17,3 +17,7 @@ console.info(NetUtil.isUnknown('UNKNOWN'));//true
 
 //从多级反向代理中获得第一个非unknown IP地址
 console.info(NetUtil.getMultistageReverseProxyIp('192.6.12.3,2324.12,31')); //192.6.12.3
+
+/*
+console.log(`此进程的 pid 是 ${process.pid}`);
+console.log(`父进程的 pid 是 ${process.ppid}`);*/
