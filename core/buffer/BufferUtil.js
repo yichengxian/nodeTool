@@ -24,7 +24,8 @@ class BufferUtil {
 
     /**
      * buffer 转 stream
-     * @param buffer
+     * @param buffer {Buffer}
+     * @return {module:stream.internal.Duplex}
      */
     static bufferToStream(buffer) {
         return StreamUtil.bufferToStream(buffer);

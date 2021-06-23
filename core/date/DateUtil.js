@@ -121,7 +121,7 @@ class DateUtil {
         }
         for (let k in o) {
             if (new RegExp("(" + k + ")").test(formatStr)) {
-                formatStr = formatStr.replace(RegExp.$1, (1 === RegExp.$1.length) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                formatStr = formatStr.replace(RegExp.$1, 1 === RegExp.$1.length ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
             }
         }
         return formatStr;
@@ -212,7 +212,7 @@ class DateUtil {
     static parse(dateStr,format){
         format = format || DatePattern.NORM_DATE_PATTERN;
         const obj = {y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0};
-        format.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function(m, $1, $2, $3, $4, idx, old)
+        format.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function(m, $1, $2, $3, $4)
         {
             dateStr = dateStr.replace(new RegExp($1+'(\\d{'+$2.length+'})'+$4), function(_m, _$1)
             {
@@ -226,6 +226,17 @@ class DateUtil {
         if(obj.S !== 0){
             date.setMilliseconds(obj.S); // 如果设置了毫秒
         }
+        return date;
+    }
+
+
+    /**
+     * 获取本月第一天的日期
+     * @param date {Date}
+     * @return {Date}
+     */
+    static getFirstDayOfMonth(date){
+        date.setDate(1);
         return date;
     }
 

@@ -1,6 +1,5 @@
 'use strict';
 const StringUtil = require("../string/StringUtil");
-const ObjectUtil = require("../object/ObjectUtil");
 const {URL} = require('url');
 
 /**
@@ -18,7 +17,7 @@ class UrlUtil {
 
         let obj = {};
 
-        if (ObjectUtil.isEmpty(url)){
+        if (StringUtil.isEmpty(url)){
             return obj;
         }
 

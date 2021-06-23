@@ -102,6 +102,33 @@ class NetUtil {
     }
 
 
+    /**
+     * 是不是ip地址
+     * @param ipStr {string}
+     * @return {number}
+     */
+    static isIp(ipStr){
+        return net.isIP(ipStr);
+    }
+
+    /**
+     * 是不是ipv4地址
+     * @param ipStr
+     * @return {boolean}
+     */
+    static isIpv4(ipStr){
+        return net.isIPv4(ipStr);
+    }
+
+    /**
+     * 是不是ipv6地址
+     * @param ipStr
+     * @return {boolean}
+     */
+    static  isIpv6(ipStr){
+        return net.isIPv6(ipStr);
+    }
+
 }
 
 module.exports = NetUtil

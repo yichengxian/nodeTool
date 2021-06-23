@@ -23,6 +23,8 @@ console.info(ArrayUtil.contains([1,2,3,4],2)); //true
 //移除某个元素
 console.info(ArrayUtil.remove([1,2,3,4],2)); //[ 1, 3, 4 ]
 
+console.info(ArrayUtil.removeOne([1,2,3,4,4,5,4],4));
+
 //出去数组中的重复元素
 console.info(ArrayUtil.unique([1,2,1,4,4])); //[ 1, 2, 4 ]
 

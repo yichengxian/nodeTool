@@ -1,4 +1,7 @@
 'use strict';
+
+const NetUtil = require('./NetUtil');
+
 /**
  * @author ycx
  * @description ipv4 工具
@@ -47,9 +50,18 @@ class Ipv4Util {
         num = Number(ipv4Str[0]) * 256 * 256 * 256 + Number(ipv4Str[1]) * 256 * 256 + Number(ipv4Str[2]) * 256 + Number(ipv4Str[3]);
         num = num >>> 0;
         return num;
+    }
 
+    /**
+     *
+     * @param ipStr
+     * @return {boolean}
+     */
+    static isIpv4(ipStr) {
+        return NetUtil.isIpv4(ipStr);
     }
 
 
 }
-module.exports =Ipv4Util
+
+module.exports = Ipv4Util
