@@ -36,6 +36,8 @@ const StringFormatUtil = require('./core/string/StringFormatUtil');
 const ReUtil = require('./core/reg/ReUtil');
 //错误
 const ErrorUtil = require('./core/error/ErrorUtil');
+//base64
+const Base64 = require('./core/codec/Base64');
 
 // no test
 const RequestUtil = require('./core/request/RequestUtil');
@@ -61,7 +63,8 @@ module.exports ={
     StringFormatUtil,
     ReUtil,
     ErrorUtil,
-    RequestUtil
+    RequestUtil,
+    Base64
 }
 
 
