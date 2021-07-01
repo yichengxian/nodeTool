@@ -1,5 +1,5 @@
 'use strict';
-const arrayUtil = require('../array/ArrayUtil');
+const ArrayUtil = require('../array/ArrayUtil');
 
 /**
  * 字符串工具类
@@ -63,7 +63,7 @@ class StringUtil {
      * @return {boolean}
      */
     static hasBlank(...strs) {
-        if (arrayUtil.isEmpty(strs)) {
+        if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
 
@@ -82,7 +82,7 @@ class StringUtil {
      * @param strs {string} 被检测字符列表
      */
     static isAllBlank(...strs) {
-        if (arrayUtil.isEmpty(strs)) {
+        if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
 
@@ -126,7 +126,7 @@ class StringUtil {
      * @return {boolean} 是否含有
      */
     static hasEmpty(...strs){
-        if (arrayUtil.isEmpty(strs)) {
+        if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
 
@@ -145,7 +145,7 @@ class StringUtil {
      * @return {boolean} 是否不包含
      */
     static hasAllEmpty(...strs){
-        if (arrayUtil.isEmpty(strs)) {
+        if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
 
