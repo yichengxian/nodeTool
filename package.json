@@ -4,7 +4,6 @@
   "description": "nodejs工具封装合集",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no more \" && exit 1",
     "eslint":"eslint core/**",
     "eslint-fix": "eslint --fix core/** "
   },
