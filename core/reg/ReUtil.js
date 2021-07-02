@@ -4,7 +4,7 @@ const StringUtil = require("../string/StringUtil");
 
 /**
  * @author yichengxian
- * @description
+ * @description 正则工具类
  */
 class ReUtil {
 

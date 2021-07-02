@@ -3,7 +3,7 @@ const ArrayUtil = require('../array/ArrayUtil');
 const StringUtil = require('../string/StringUtil');
 /**
  * @author ycx
- * 字符串格式化工具
+ * @description 字符串格式化工具
  */
 class StringFormatUtil {
 

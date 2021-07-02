@@ -4,8 +4,9 @@
   "description": "nodejs工具封装合集",
   "main": "index.js",
   "scripts": {
-    "eslint":"eslint core/**",
-    "eslint-fix": "eslint --fix core/** "
+    "eslint": "eslint core/**",
+    "eslint-fix": "eslint --fix core/** ",
+    "generate-docs": "jsdoc -t node_modules/docdash -R README.md -r core/** -d ../nodeTool-doc"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,9 @@
   "author": "ycx",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.28.0"
+    "better-docs": "^2.3.2",
+    "eslint": "^7.28.0",
+    "jsdoc": "^3.6.7",
+    "docdash": "^1.2.0"
   }
 }

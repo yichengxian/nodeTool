@@ -1,4 +1,4 @@
-const PageUtil = require('../../core/util/PageUtil');
+const PageUtil = require('../../core/page/PageUtil');
 
 //根据总数计算总页数
 console.info(PageUtil.totalPage(20,6)); //4

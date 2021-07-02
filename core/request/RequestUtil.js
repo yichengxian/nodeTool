@@ -6,7 +6,8 @@ const NetUtil = require("../net/NetUtil");
  *
  *
  * https://gitee.com/yichengxian/testing-express/blob/main/testing-common/util/ClientUtil.js
- *
+ * @author ycx
+ * @description 请求工具类
  */
 class RequestUtil {
 
@@ -14,8 +15,9 @@ class RequestUtil {
      *
      * 获取客户端ip
      *
-     * @param request {Request}
-     * @param otherHeaderNames {string}
+     * @param request {Request} request对象
+     * @param otherHeaderNames {string} 另外的header数组 可选
+     * @return {string} 客户端IP
      */
     static getClientIp(request,...otherHeaderNames){
         //常见的ip头
@@ -36,8 +38,9 @@ class RequestUtil {
 
     /**
      * 获取客户端IP
-     * @param request {Request}
-     * @param otherHeaderNames {string}
+     * @param request {Request} 请求头
+     * @param otherHeaderNames {string} 其他header数组
+     * @return {string} 客户端IP
      */
     static getClientIpByHeaders(request,...otherHeaderNames){
         //

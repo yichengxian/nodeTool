@@ -4,14 +4,14 @@ const StreamUtil = require('../stream/StreamUtil');
 /**
  * @author ycx
  *
- * @description buffer
+ * @description buffer工具类
  */
 class BufferUtil {
 
     /**
      * stream 转buffer
-     * @param stream {Stream}
-     * @return {Promise<Buffer>}
+     * @param stream {Stream} stream 对象
+     * @return {Promise<Buffer>} buffer对象
      */
     static streamToBuffer(stream) {
         return new Promise((resolve, reject) => {

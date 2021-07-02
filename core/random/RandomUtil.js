@@ -13,7 +13,7 @@ class RandomUtil {
      * 获取随机范围的int数值 包含min 不包含max
      * @param min {number} 最小数
      * @param max {number} 最大数
-     * @return {number}
+     * @return {number} 随机整数
      */
     static randomInt(min, max) {
         if (Number.isNaN(min)) {
@@ -34,7 +34,7 @@ class RandomUtil {
      * e.g. 'abcdefg'中获取长度为3随机字符串 ‘afg’;
      * @param str {string}
      * @param length {number} 随机字符串的长度
-     * @return {string|null}
+     * @return {string|null}  字符串或null
      */
     static randomStr(str, length) {
         if (StringUtil.isEmpty(str)) {
@@ -53,7 +53,7 @@ class RandomUtil {
      *  从前几个数组中随机获取 一个元素
      * @param arr {Array<*>} 数组对象
      * @param limit {number} 限制的前n项
-     * @return {*}
+     * @return {*} 数组中的某个元素或者null
      */
     static randomEle(arr, limit) {
         if (ArrayUtil.isEmpty(arr)) {
@@ -68,8 +68,8 @@ class RandomUtil {
 
     /**
      * 从A-Za-z0-9中获取指定长度的字符串
-     * @param length
-     * @return {string}
+     * @param length 长度
+     * @return {string} 字符串
      */
     static randomEnStr(length) {
         return this.randomStr(StringUtil.RandomStr, length);

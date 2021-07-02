@@ -3,7 +3,7 @@ const ArrayUtil = require('../array/ArrayUtil');
 
 /**
  * 字符串工具类
- * @author
+ * @author ycx
  */
 class StringUtil {
 
