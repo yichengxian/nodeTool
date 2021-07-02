@@ -2,7 +2,7 @@
 
 [github](https://github.com/yichengxian/nodeTool)  [gitee](https://gitee.com/yichengxian/nodeTool)
 
-nodejs常用或常见工具类集合体
+nodejs常用或常见工具类集合体，由于npm已经存在nodeTool的包，所以发布以y-node-tool包名命名
 
 ## 介绍
  	在使用node开发中会遇到各种需要封装，在这些常用/常见的方法进行封装成工具类，提供参考;
@@ -78,11 +78,11 @@ if(StringUtil.isEmpty(str)){
 - 获取已经向npm发布的版本 ：
 
   ```shell
-  npm install nodeTool
+  npm install y-node-tool
   ```
 
   ```javascript
-  const {StringUtil} = require('nodeTool');
+  const {StringUtil} = require('y-node-tool');
   ```
 
   

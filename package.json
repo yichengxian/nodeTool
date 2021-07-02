@@ -1,5 +1,5 @@
 {
-  "name": "nodeTool",
+  "name": "y-node-tool",
   "version": "1.0.0",
   "description": "nodejs工具封装合集",
   "main": "index.js",
@@ -32,12 +32,9 @@
     "phoneUtil",
     "arrayUtil"
   ],
-  "author": "ycx",
+  "author": "yichengxian",
   "license": "MIT",
-  "devDependencies": {
-    "better-docs": "^2.3.2",
-    "eslint": "^7.28.0",
-    "jsdoc": "^3.6.7",
-    "docdash": "^1.2.0"
+  "directories": {
+    "test": "test"
   }
 }
