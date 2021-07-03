@@ -1,11 +1,12 @@
 {
-  "name": "nodeTool",
+  "name": "y-node-tool",
   "version": "1.0.0",
   "description": "nodejs工具封装合集",
   "main": "index.js",
   "scripts": {
-    "eslint":"eslint core/**",
-    "eslint-fix": "eslint --fix core/** "
+    "eslint": "eslint core/**",
+    "eslint-fix": "eslint --fix core/** ",
+    "generate-docs": "jsdoc -t node_modules/docdash -R README.md -r core/** -d ../nodeTool-doc"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,9 @@
     "phoneUtil",
     "arrayUtil"
   ],
-  "author": "ycx",
+  "author": "yichengxian",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.28.0"
+  "directories": {
+    "test": "test"
   }
 }

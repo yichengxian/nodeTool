@@ -10,7 +10,7 @@ class OSUtil {
 
     /**
      * 获取hostname
-     * @return {string}
+     * @return {string} hostname
      */
     static getHostName() {
 
@@ -19,7 +19,7 @@ class OSUtil {
 
     /**
      * 获取cpu信息
-     *  例如我的cpu信息如下
+     *  例如我的cpu信息如下:</br>
      *   {
      *   model: 'Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz',
      *   speed: 3099, 以兆赫兹为单位
@@ -41,7 +41,7 @@ class OSUtil {
 
     /**
      * 获取当前用户信息
-     * 例如我的信息如下
+     * 例如我的信息如下:<br/>
      * {
      *  uid: 1000,
      *  gid: 1000,
@@ -57,8 +57,8 @@ class OSUtil {
     }
 
     /**
-     * 获取操作系统版本<br/>
-     *  注意不是 获取node版本
+     * 获取操作系统版本 <br/>
+     *  注意 不是获取node版本
      *  @return {string}
      */
     static getVersion() {
@@ -109,9 +109,9 @@ class OSUtil {
     }
 
     /**
-     * 获取当前操作系统所属平台
+     * 获取当前操作系统所属平台 </br>
      * 例如： linux ，android，win32等
-     * @return {NodeJS.Platform}
+     * @return {NodeJS.Platform} 操作系统所属平台字符串
      */
     static getPlatform() {
         return os.platform();

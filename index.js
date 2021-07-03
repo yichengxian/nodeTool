@@ -5,15 +5,15 @@ const ObjectUtil = require('./core/object/ObjectUtil');
 //数组工具类
 const ArrayUtil = require('./core/array/ArrayUtil');
 //分页工具类
-const PageUtil = require('./core/util/PageUtil');
+const PageUtil = require('./core/page/PageUtil');
 //随机工具类
 const RandomUtil = require('./core/random/RandomUtil');
 //手机号工具类
-const PhoneUtil = require('./core/util/PhoneUtil');
+const PhoneUtil = require('./core/phone/PhoneUtil');
 //推特雪花算法
-const Snowflake = require('./core/lang/Snowflake');
+const Snowflake = require('./core/util/Snowflake');
 //uuid
-const UUID = require('./core/lang/UUID');
+const UUID = require('./core/util/UUID');
 //日期工具类
 const DateUtil = require('./core/date/DateUtil');
 //随机权重工具类

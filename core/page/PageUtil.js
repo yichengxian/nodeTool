@@ -1,6 +1,6 @@
 'use strict';
 /**
- * @author
+ * @author ycx
  * @description 分页工具
  */
 class PageUtil {
@@ -9,7 +9,7 @@ class PageUtil {
      * 根据总数计算总页数
      * @param totalCount {number} 总数
      * @param pageSize {number} 页页面大小
-     * @return {Number}
+     * @return {Number} 页数
      */
     static totalPage(totalCount, pageSize) {
         if (0 === pageSize) {
