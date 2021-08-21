@@ -59,3 +59,5 @@ console.info(DateUtil.getToDayEndDate()); //2020-12-26T15:59:59.999Z
 
 //解析日期
 console.info(DateUtil.parse("19981216",'yyyyMMdd')); //1998-12-15T16:00:00.000Z
+//
+console.info(DateUtil.isWeekday(new Date()));//
