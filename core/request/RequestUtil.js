@@ -5,7 +5,7 @@ const NetUtil = require("../net/NetUtil");
 /**
  *
  *
- * https://gitee.com/yichengxian/testing-express/blob/main/testing-common/util/ClientUtil.js
+ * 使用举例:https://gitee.com/yichengxian/testing-express/blob/main/testing-common/util/ClientUtil.js
  * @author ycx
  * @description 请求工具类
  */
