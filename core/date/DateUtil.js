@@ -47,7 +47,7 @@ class DateUtil {
      * @return {number} 季度
      */
     static quarter(date) {
-        return Math.floor(date.getMonth() / 3+1);
+        return Math.floor(date.getMonth() / 3 + 1);
     }
 
     /**
@@ -67,7 +67,7 @@ class DateUtil {
     static dayOfYear(date) {
         //一天 = 86400000ms =24 * 60 * 60 * 100
 
-        return Math.ceil((this.nowDate()- new Date(this.year(date).toString())) /86400000 ) + 1;
+        return Math.ceil((this.nowDate() - new Date(this.year(date).toString())) / 86400000) + 1;
     }
 
     /**
@@ -191,7 +191,7 @@ class DateUtil {
      */
     static getEndDate(date) {
         //一天少一毫秒 = 24 * 60 * 60 * 1000 - 1  = 86399999
-        return new Date(this.getStartDate(date).getTime()+86399999);
+        return new Date(this.getStartDate(date).getTime() + 86399999);
     }
 
     /**
@@ -209,13 +209,11 @@ class DateUtil {
      * @param format {string} 例如'yyyy-MM-dd'
      * @return {Date|null}
      */
-    static parse(dateStr,format){
+    static parse(dateStr, format) {
         format = format || DatePattern.NORM_DATE_PATTERN;
         const obj = {y: 0, M: 1, d: 0, H: 0, h: 0, m: 0, s: 0, S: 0};
-        format.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function(m, $1, $2, $3, $4)
-        {
-            dateStr = dateStr.replace(new RegExp($1+'(\\d{'+$2.length+'})'+$4), function(_m, _$1)
-            {
+        format.replace(/([^yMdHmsS]*?)(([yMdHmsS])\3*)([^yMdHmsS]*?)/g, function (m, $1, $2, $3, $4) {
+            dateStr = dateStr.replace(new RegExp($1 + '(\\d{' + $2.length + '})' + $4), function (_m, _$1) {
                 obj[$3] = parseInt(_$1);
                 return null;
             });
@@ -223,7 +221,7 @@ class DateUtil {
         });
         obj.M--; // 月份是从0开始的，所以要减去1
         const date = new Date(obj.y, obj.M, obj.d, obj.H, obj.m, obj.s);
-        if(obj.S !== 0){
+        if (obj.S !== 0) {
             date.setMilliseconds(obj.S); // 如果设置了毫秒
         }
         return date;
@@ -232,13 +230,25 @@ class DateUtil {
 
     /**
      * 获取本月第一天的日期
-     * @param date {Date}
+     * @param date {Date} 日期
      * @return {Date}
      */
-    static getFirstDayOfMonth(date){
+    static getFirstDayOfMonth(date) {
         date.setDate(1);
         return date;
     }
+
+
+    /**
+     * 是否为工作日
+     * @param date {Date} 日期
+     * @return {boolean} 是否为工作日
+     */
+    static isWeekday(date) {
+        return 0 !== this.dayOfWeek(date) % 6
+    }
+
+
 
 }
 
