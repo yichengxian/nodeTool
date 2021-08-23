@@ -32,7 +32,7 @@ class RequestUtil {
         if (ArrayUtil.isNotEmpty(otherHeaderNames)){
             otherHeaderNames.forEach(value => headers.push(value))
         }
-        return this.getClientIpByHeaders(request,otherHeaderNames);
+        return this.getClientIpByHeaders(request,headers);
     }
 
 
