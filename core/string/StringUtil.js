@@ -17,7 +17,7 @@ class StringUtil {
      *
      * @type {string}
      */
-    static RandomStr ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    static RandomStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     /**
      * @author ycx
@@ -38,7 +38,7 @@ class StringUtil {
 
         for (let i = 0; i < str.length; i++) {
             //有一个不为' '
-            if (!(this.BlankStr=== str[i])) {
+            if (!(this.BlankStr === str[i])) {
                 return false;
             }
         }
@@ -125,7 +125,7 @@ class StringUtil {
      * @param strs {string} 被检测字符串列表
      * @return {boolean} 是否含有
      */
-    static hasEmpty(...strs){
+    static hasEmpty(...strs) {
         if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
@@ -144,7 +144,7 @@ class StringUtil {
      * @param strs {string} 被检测字符串列表
      * @return {boolean} 是否不包含
      */
-    static hasAllEmpty(...strs){
+    static hasAllEmpty(...strs) {
         if (ArrayUtil.isEmpty(strs)) {
             return true;
         }
@@ -155,6 +155,48 @@ class StringUtil {
             }
         }
         return true;
+    }
+
+    /**
+     * 隐藏部分一段字符串 <br/>
+     * e.g. 比如隐藏字符串 '133899911'中的89,那么隐藏后'133**9911'
+     * @param str {String} 要被隐藏的字符串
+     * @param start {number} 开始位置(包含)
+     * @param end {number} 结束位置(包含)
+     * @param char {String} 隐藏字符 比如'*'
+     * @return {String} 隐藏结果
+     */
+    static hideSection(str, start, end, char) {
+
+
+        //为空不操作
+        if (this.isEmpty(str)) {
+            return str;
+        }
+        //不合法不操作
+        if (start > end) {
+            return str;
+        }
+        //比字符长不操作
+        if (end > str.length) {
+            return str;
+        }
+        //如果没有用'*'替换
+        if (this.isEmpty(char)) {
+            char = '*'
+        }
+        char = char.charAt(0);
+        let resultStr = '';
+        for (let i = 0; i < str.length; i++) {
+            //
+            if (i >= start && i <= end) {
+                resultStr += char;
+            } else {
+                resultStr += str[i]
+            }
+
+        }
+        return resultStr;
     }
 
 

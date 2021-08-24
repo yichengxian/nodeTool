@@ -24,3 +24,6 @@ console.info(StringUtil.hasEmpty(undefined,"234","aaaa")); //true
 
 //是否全是空的
 console.info(StringUtil.hasAllEmpty(undefined,"234","aaaa")) //false
+
+//隐藏字符段
+console.info(StringUtil.hideSection("13872253601",3,6,'*'));//138****3601
