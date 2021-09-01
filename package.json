@@ -30,7 +30,14 @@
     "bufferUtil",
     "pageUtil",
     "phoneUtil",
-    "arrayUtil"
+    "arrayUtil",
+    "fileUtil",
+    "urlUtil",
+    "RequestUtil",
+    "osUtil",
+    "ipv4Util",
+    "hashUtil",
+    "BloomFilter"
   ],
   "author": "yichengxian",
   "license": "MIT",
