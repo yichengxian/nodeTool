@@ -140,7 +140,8 @@ class StringUtil {
 
     /**
      * @author ycx
-     * 判断字符串列表是否全是空字符串
+     * 判断字符串列表是否全是空字符串<br/>
+     * e.g. 比如在['',null,'张三'] 含有null那么含有空值
      * @param strs {string} 被检测字符串列表
      * @return {boolean} 是否不包含
      */
